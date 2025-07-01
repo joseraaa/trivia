@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia - Batalla del 5 de Mayo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pergamino-fondo">
+        <div class="container">
+            <div class="juego-card">
+                <!-- Barra de progreso militar -->
+                <div class="progreso-militar">
+                    <div class="progreso-info">
+                        <span id="pregunta-actual" class="pregunta-numero">Pregunta 1 de 10</span>
+                        <span id="intentos" class="intentos-contador">Intentos: 0</span>
+                    </div>
+                    <div class="barra-progreso-militar">
+                        <div id="progreso-fill" class="progreso-fill-militar"></div>
+                    </div>
+                </div>
+
+                <!-- Pregunta con marco histórico -->
+                <div class="pregunta-historica">
+                    <h2 id="pregunta-texto" class="pregunta-texto-militar"></h2>
+                </div>
+
+                <!-- Opciones de respuesta simplificadas -->
+                <div id="opciones-container" class="opciones-militares">
+                    <!-- Las opciones se generan dinámicamente -->
+                </div>
+
+                <!-- Mensaje de resultado militar -->
+                <div id="resultado-container" class="resultado-militar" style="display: none;">
+                    <div id="resultado-mensaje" class="resultado-mensaje-militar">
+                        <div class="resultado-icono-militar" id="resultado-icono"></div>
+                        <div class="resultado-texto-militar">
+                            <h3 id="resultado-titulo"></h3>
+                            <div id="resultado-explicacion"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón siguiente militar -->
+                <div class="siguiente-militar" style="display: none;" id="siguiente-container">
+                    <button class="boton-siguiente-militar" onclick="siguientePregunta()">
+                        <span id="siguiente-texto">Siguiente Batalla</span>
+                        <span class="flecha-militar">→</span>
+                    </button>
+                </div>
+
+                <!-- Hint militar -->
+                <div id="hint-container" class="hint-militar" style="display: none;">
+                    <div class="hint-texto-militar">💡 Reagrupa tus fuerzas e intenta nuevamente</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

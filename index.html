@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalla del 5 de Mayo - Trivia Histórica</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pergamino-fondo">
+        <div class="container">
+            <div class="welcome-card">
+                <!-- Escudo militar decorativo -->
+                <div class="escudo-militar">
+                    <div class="escudo-exterior">
+                        <div class="escudo-interior">
+                            <div class="escudo-centro">
+                                <span class="escudo-fecha">1862</span>
+                                <div class="escudo-espadas">⚔️</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Título principal con estilo militar -->
+                <h1 class="titulo-principal">Batalla del 5 de Mayo</h1>
+                <h2 class="subtitulo-militar">Trivia Histórica Interactiva</h2>
+
+                <!-- Descripción histórica -->
+                <div class="descripcion-historica">
+                    <p>Descubre la historia heroica de la Batalla del 5 de Mayo de 1862, cuando las fuerzas mexicanas defendieron valientemente la soberanía nacional contra la invasión francesa en Puebla.</p>
+                </div>
+
+                <!-- Características del juego con iconografía militar -->
+                <div class="caracteristicas-militares">
+                    <div class="caracteristica-militar">
+                        <div class="icono-militar">📜</div>
+                        <h3>10 Preguntas Históricas</h3>
+                        <p>Explora los eventos más importantes de esta batalla heroica</p>
+                    </div>
+                    
+                    <div class="caracteristica-militar">
+                        <div class="icono-militar">⭐</div>
+                        <h3>Calificación con Estrellas</h3>
+                        <p>Al finalizar, se mostrará una calificación con estrellas según tus aciertos</p>
+                    </div>
+                    
+                    <div class="caracteristica-militar">
+                        <div class="icono-militar">⚔️</div>
+                        <h3>Avance Progresivo</h3>
+                        <p>Debes responder correctamente para avanzar a la siguiente pregunta</p>
+                    </div>
+                </div>
+
+                <!-- Instrucciones con marco militar -->
+                <div class="instrucciones-militares">
+                    <h3>📋 Órdenes de Combate</h3>
+                    <ul>
+                        <li>Lee cuidadosamente cada pregunta sobre la batalla</li>
+                        <li>Selecciona la respuesta correcta entre las 3 opciones</li>
+                        <li>Solo podrás avanzar si respondes correctamente</li>
+                        <li>Aprende datos fascinantes sobre esta heroica batalla</li>
+                    </ul>
+                </div>
+
+                <!-- Botón de inicio con estilo militar -->
+                <button class="boton-militar" onclick="comenzarJuego()">
+                    <span class="boton-icono-militar">⚔️</span>
+                    <span class="boton-texto">Iniciar Batalla</span>
+                    <span class="boton-icono-militar">⚔️</span>
+                </button>
+
+                <!-- Cita histórica -->
+                <div class="cita-historica">
+                    <p>"La patria es primero" - General Ignacio Zaragoza</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function comenzarJuego() {
+            // Efecto de transición militar
+            const card = document.querySelector('.welcome-card');
+            card.style.transform = 'scale(0.95)';
+            card.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                window.location.href = 'juego.html';
+            }, 300);
+        }
+
+        // Efecto de entrada con animación militar
+        window.addEventListener('load', () => {
+            const card = document.querySelector('.welcome-card');
+            card.style.animation = 'marcha-militar 1.2s ease-out';
+        });
+    </script>
+</body>
+</html>

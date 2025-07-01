@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Victoria! - Batalla del 5 de Mayo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pergamino-fondo">
+        <div class="container">
+            <div class="final-card">
+                <!-- Trofeo militar -->
+                <div class="trofeo-militar">
+                    <div class="trofeo-base">🏆</div>
+                    <div class="laureles">🌿 🌿</div>
+                </div>
+
+                <!-- Títulos de victoria -->
+                <h1 class="titulo-victoria">¡Victoria Gloriosa!</h1>
+                <h2 id="subtitulo-final" class="rango-militar">¡Excelente Estratega!</h2>
+
+                <!-- Medallas y estrellas -->
+                <div id="estrellas-container" class="medallas-militares">
+                    <!-- Se generan dinámicamente -->
+                </div>
+
+                <!-- Estadísticas de batalla -->
+                <div class="estadisticas-batalla">
+                    <div class="estadistica-militar">
+                        <div class="estadistica-numero-militar">10/10</div>
+                        <div class="estadistica-texto-militar">Batallas Completadas</div>
+                    </div>
+                    <div class="estadistica-militar">
+                        <div class="estadistica-numero-militar" id="total-intentos">0</div>
+                        <div class="estadistica-texto-militar">Maniobras Totales</div>
+                    </div>
+                </div>
+
+                <!-- Mensaje de rendimiento militar -->
+                <div id="mensaje-rendimiento" class="mensaje-rendimiento-militar">
+                    <p id="texto-rendimiento"></p>
+                </div>
+
+                <!-- Reflexión histórica con marco patriótico -->
+                <div class="reflexion-patriotica">
+                    <div class="reflexion-icono-patriotico">🇲🇽</div>
+                    <h3>Legado Histórico</h3>
+                    <p>La Batalla del 5 de Mayo de 1862 nos recuerda que la valentía y determinación del pueblo mexicano pueden superar cualquier adversidad. Esta victoria no solo defendió nuestra soberanía, sino que inspiró a generaciones futuras a valorar y proteger nuestra independencia nacional.</p>
+                </div>
+
+                <!-- Contador regresivo militar -->
+                <div class="contador-militar">
+                    <p>⏰ Regresando al cuartel en <span id="contador">10</span> segundos...</p>
+                    <div class="barra-tiempo-militar">
+                        <div id="barra-tiempo-fill" class="barra-tiempo-fill-militar"></div>
+                    </div>
+                </div>
+
+                <!-- Botones finales militares -->
+                <div class="botones-militares">
+                    <button class="boton-reiniciar-militar" onclick="reiniciarJuego()">
+                        <span class="boton-icono-militar">🔄</span>
+                        <span>Nueva Campaña</span>
+                    </button>
+                </div>
+
+                <!-- Cita final -->
+                <div class="cita-final">
+                    <p>"El honor y la gloria pertenecen a la patria" - Ignacio Zaragoza</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables para el contador regresivo
+        let tiempoRestante = 10;
+        let intervaloCuenta = null;
+
+        // Obtener datos del localStorage
+        const totalIntentos = localStorage.getItem('totalIntentos') || 0;
+        
+        // Mostrar estadísticas
+        document.getElementById('total-intentos').textContent = totalIntentos;
+
+        // Determinar rendimiento militar y mostrar medallas
+        function mostrarRendimientoMilitar() {
+            const intentos = parseInt(totalIntentos);
+            let titulo, mensaje, medallas, rango;
+
+            if (intentos <= 10) {
+                titulo = "¡General Supremo!";
+                mensaje = "Demuestras un conocimiento excepcional de la estrategia militar del 5 de Mayo";
+                medallas = 5;
+                rango = "general-supremo";
+            } else if (intentos <= 15) {
+                titulo = "¡Coronel Distinguido!";
+                mensaje = "Tienes una sólida comprensión de las tácticas de combate";
+                medallas = 4;
+                rango = "coronel";
+            } else if (intentos <= 20) {
+                titulo = "¡Capitán Valiente!";
+                mensaje = "Has demostrado valor y conocimiento en el campo de batalla";
+                medallas = 3;
+                rango = "capitan";
+            } else {
+                titulo = "¡Soldado Heroico!";
+                mensaje = "Has mostrado perseverancia y dedicación al servicio de la patria";
+                medallas = 2;
+                rango = "soldado";
+            }
+
+            document.getElementById('subtitulo-final').textContent = titulo;
+            document.getElementById('subtitulo-final').className = `rango-militar ${rango}`;
+            document.getElementById('texto-rendimiento').textContent = mensaje;
+
+            // Generar medallas
+            const medallasContainer = document.getElementById('estrellas-container');
+            for (let i = 1; i <= 5; i++) {
+                const medalla = document.createElement('span');
+                medalla.className = i <= medallas ? 'medalla activa' : 'medalla';
+                medalla.textContent = '🎖️';
+                medallasContainer.appendChild(medalla);
+            }
+        }
+
+        // Iniciar contador regresivo militar
+        function iniciarContadorMilitar() {
+            const contadorElement = document.getElementById('contador');
+            const barraFill = document.getElementById('barra-tiempo-fill');
+            
+            barraFill.style.width = '100%';
+            
+            intervaloCuenta = setInterval(() => {
+                tiempoRestante--;
+                contadorElement.textContent = tiempoRestante;
+                
+                const porcentaje = (tiempoRestante / 10) * 100;
+                barraFill.style.width = `${porcentaje}%`;
+                
+                if (tiempoRestante <= 3) {
+                    barraFill.style.background = 'linear-gradient(90deg, #8B0000, #DC143C)';
+                } else if (tiempoRestante <= 5) {
+                    barraFill.style.background = 'linear-gradient(90deg, #B8860B, #DAA520)';
+                }
+                
+                if (tiempoRestante <= 0) {
+                    clearInterval(intervaloCuenta);
+                    reiniciarJuego();
+                }
+            }, 1000);
+        }
+
+        function detenerContador() {
+            if (intervaloCuenta) {
+                clearInterval(intervaloCuenta);
+                intervaloCuenta = null;
+            }
+        }
+
+        function reiniciarJuego() {
+            detenerContador();
+            localStorage.removeItem('totalIntentos');
+            localStorage.removeItem('preguntaActual');
+            
+            const card = document.querySelector('.final-card');
+            card.style.transform = 'scale(0.95)';
+            card.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 300);
+        }
+
+        function pausarContadorTemporalmente() {
+            detenerContador();
+            setTimeout(() => {
+                if (tiempoRestante > 0) {
+                    iniciarContadorMilitar();
+                }
+            }, 3000);
+        }
+
+        // Inicializar al cargar
+        window.addEventListener('load', () => {
+            mostrarRendimientoMilitar();
+            document.querySelector('.final-card').style.animation = 'marcha-militar 1.2s ease-out';
+            
+            setTimeout(() => {
+                iniciarContadorMilitar();
+            }, 2000);
+        });
+
+        // Pausar contador cuando el usuario interactúa
+        document.addEventListener('click', pausarContadorTemporalmente);
+        document.addEventListener('touchstart', pausarContadorTemporalmente);
+
+        window.addEventListener('beforeunload', detenerContador);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1567 @@
+/* Importar fuentes históricas y militares */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo de pergamino histórico */
+.pergamino-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Textura de pergamino */
+        radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(218, 165, 32, 0.05) 0%, transparent 50%),
+        /* Gradiente base */
+        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 25%, #D4933B 50%, #B8860B 75%, #8B4513 100%);
+    
+    /* Textura adicional */
+    background-image: 
+        /* Patrón de papel antiguo */
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 69, 19, 0.02) 2px,
+            rgba(139, 69, 19, 0.02) 4px
+        ),
+        /* Manchas de edad */
+        radial-gradient(circle at 20% 30%, rgba(160, 82, 45, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.06) 0%, transparent 25%),
+        radial-gradient(circle at 60% 20%, rgba(218, 165, 32, 0.04) 0%, transparent 20%);
+    
+    background-size: 
+        100% 100%,
+        8px 8px,
+        200px 200px,
+        150px 150px,
+        100px 100px;
+    
+    z-index: -1;
+}
+
+/* Contenedor principal */
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Tarjetas principales con estilo militar */
+.welcome-card, .juego-card, .final-card {
+    background: 
+        /* Fondo principal */
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 255, 0.9) 100%),
+        /* Textura de papel */
+        radial-gradient(circle at 30% 30%, rgba(218, 165, 32, 0.05) 0%, transparent 50%);
+    
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    
+    /* Sombra militar con múltiples capas */
+    box-shadow: 
+        /* Sombra principal */
+        0 20px 40px rgba(139, 69, 19, 0.4),
+        /* Sombra interna para relieve */
+        inset 0 2px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -2px 0 rgba(139, 69, 19, 0.1),
+        /* Borde dorado */
+        0 0 0 3px rgba(218, 165, 32, 0.3),
+        0 0 0 6px rgba(139, 69, 19, 0.2);
+    
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #DAA520, #B8860B, #8B4513, #DAA520) 1;
+    
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: calc(100vh - 20px);
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Decoración de esquinas militares */
+.welcome-card::before, .juego-card::before, .final-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid rgba(218, 165, 32, 0.2);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+/* Animación de entrada militar */
+@keyframes marcha-militar {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+        filter: blur(2px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(10px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* === PANTALLA DE BIENVENIDA === */
+
+.welcome-card {
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Escudo militar decorativo */
+.escudo-militar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.escudo-exterior {
+    width: 80px;
+    height: 80px;
+    background: 
+        radial-gradient(circle, #DAA520 0%, #B8860B 50%, #8B4513 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 8px 16px rgba(139, 69, 19, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(139, 69, 19, 0.3);
+    border: 3px solid #8B4513;
+    animation: pulso-militar 3s infinite;
+    position: relative;
+}
+
+.escudo-exterior::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(218, 165, 32, 0.4);
+    border-radius: 50%;
+}
+
+@keyframes pulso-militar {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 
+            0 8px 16px rgba(139, 69, 19, 0.5),
+            inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 
+            0 12px 24px rgba(139, 69, 19, 0.6),
+            inset 0 3px 6px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.escudo-interior {
+    width: 60px;
+    height: 60px;
+    background: 
+        radial-gradient(circle, #8B0000 0%, #DC143C 50%, #B22222 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFD700;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.escudo-centro {
+    text-align: center;
+    color: #FFD700;
+}
+
+.escudo-fecha {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    display: block;
+    line-height: 1;
+}
+
+.escudo-espadas {
+    font-size: 10px;
+    margin-top: 2px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+/* Títulos militares */
+.titulo-principal {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #8B4513;
+    text-shadow: 
+        2px 2px 4px rgba(139, 69, 19, 0.4),
+        0 0 10px rgba(218, 165, 32, 0.2);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.subtitulo-militar {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: #DC143C;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(220, 20, 60, 0.3);
+}
+
+/* Descripción histórica */
+.descripcion-historica {
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.8) 0%, rgba(245, 230, 211, 0.9) 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    box-shadow: 
+        0 4px 8px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.descripcion-historica p {
+    font-size: 1.05rem;
+    color: #8B4513;
+    line-height: 1.5;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Características militares */
+.caracteristicas-militares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.caracteristica-militar {
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.9) 0%, rgba(245, 230, 211, 0.8) 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(218, 165, 32, 0.4);
+    box-shadow: 
+        0 4px 8px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.caracteristica-militar:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 12px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.caracteristica-militar::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.icono-militar {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
+}
+
+.caracteristica-militar h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #8B4513;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+.caracteristica-militar p {
+    color: #8B4513;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Instrucciones militares */
+.instrucciones-militares {
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.9) 0%, rgba(240, 230, 140, 0.8) 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(218, 165, 32, 0.5);
+    text-align: left;
+    box-shadow: 
+        0 4px 8px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.instrucciones-militares::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.instrucciones-militares h3 {
+    font-family: 'Cinzel', serif;
+    color: #8B4513;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+.instrucciones-militares ul {
+    list-style: none;
+    color: #8B4513;
+    margin: 0;
+    padding: 0;
+}
+
+.instrucciones-militares li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.instrucciones-militares li::before {
+    content: '⚔️';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.9rem;
+    filter: drop-shadow(1px 1px 1px rgba(139, 69, 19, 0.3));
+}
+
+/* Botones militares */
+.boton-militar, .boton-siguiente-militar, .boton-reiniciar-militar {
+    background: 
+        linear-gradient(135deg, #DC143C 0%, #8B0000 50%, #B22222 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    box-shadow: 
+        0 8px 16px rgba(139, 69, 19, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -2px 0 rgba(139, 0, 0, 0.3);
+    
+    border: 3px solid #FFD700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-militar::before, .boton-siguiente-militar::before, .boton-reiniciar-militar::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.boton-militar:hover, .boton-siguiente-militar:hover, .boton-reiniciar-militar:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 12px 24px rgba(139, 69, 19, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(139, 0, 0, 0.4);
+    border-color: #FFA500;
+}
+
+.boton-militar:active, .boton-siguiente-militar:active, .boton-reiniciar-militar:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.boton-icono-militar {
+    font-size: 1.1rem;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.boton-texto {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Cita histórica */
+.cita-historica {
+    background: 
+        linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, rgba(139, 0, 0, 0.1) 100%);
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(220, 20, 60, 0.2);
+    margin-top: 10px;
+}
+
+.cita-historica p {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: #8B0000;
+    font-size: 0.95rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(139, 0, 0, 0.2);
+}
+
+/* === PANTALLA DE JUEGO === */
+
+.juego-card {
+    gap: 15px;
+}
+
+/* Progreso militar */
+.progreso-militar {
+    flex-shrink: 0;
+}
+
+.progreso-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+    color: #8B4513;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.pregunta-numero {
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+}
+
+.intentos-contador {
+    color: #DC143C;
+    text-shadow: 1px 1px 2px rgba(220, 20, 60, 0.3);
+}
+
+.barra-progreso-militar {
+    width: 100%;
+    height: 10px;
+    background: 
+        linear-gradient(135deg, rgba(218, 165, 32, 0.3) 0%, rgba(139, 69, 19, 0.3) 100%);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 2px 4px rgba(139, 69, 19, 0.3),
+        0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.progreso-fill-militar {
+    height: 100%;
+    background: 
+        linear-gradient(90deg, #DC143C 0%, #8B0000 50%, #B22222 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    box-shadow: 
+        0 1px 3px rgba(220, 20, 60, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.progreso-fill-militar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 3px,
+            rgba(255, 255, 255, 0.1) 3px,
+            rgba(255, 255, 255, 0.1) 6px
+        );
+}
+
+/* Pregunta histórica */
+.pregunta-historica {
+    flex-shrink: 0;
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.9) 0%, rgba(245, 230, 211, 0.8) 100%);
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid rgba(218, 165, 32, 0.4);
+    box-shadow: 
+        0 6px 12px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.pregunta-historica::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.pregunta-texto-militar {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #8B4513;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+/* Opciones militares simplificadas */
+.opciones-militares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    flex: 1;
+    align-content: start;
+}
+
+.opcion {
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 255, 0.9) 100%);
+    border: 3px solid rgba(218, 165, 32, 0.4);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    box-shadow: 
+        0 6px 12px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    
+    position: relative;
+    height: fit-content;
+    max-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.opcion::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.opcion:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #DAA520;
+    box-shadow: 
+        0 10px 20px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.opcion.correcta {
+    border-color: #228B22;
+    background: 
+        linear-gradient(135deg, rgba(240, 255, 240, 0.95) 0%, rgba(230, 255, 230, 0.9) 100%);
+    box-shadow: 
+        0 8px 16px rgba(34, 139, 34, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.opcion.incorrecta {
+    border-color: #DC143C;
+    background: 
+        linear-gradient(135deg, rgba(255, 240, 240, 0.95) 0%, rgba(255, 230, 230, 0.9) 100%);
+    box-shadow: 
+        0 8px 16px rgba(220, 20, 60, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.opcion-imagen {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+}
+
+.opcion:hover .opcion-imagen {
+    transform: scale(1.05);
+}
+
+.opcion-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #8B4513;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.8) 0%, rgba(245, 230, 211, 0.6) 100%);
+}
+
+.opcion-indicador {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 255, 0.9) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(218, 165, 32, 0.4);
+    z-index: 10;
+}
+
+/* Resultado militar */
+.resultado-militar {
+    flex-shrink: 0;
+}
+
+.resultado-mensaje-militar {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 15px;
+    border: 3px solid;
+    text-align: left;
+    box-shadow: 
+        0 6px 12px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.resultado-mensaje-militar::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.resultado-mensaje-militar.correcto {
+    background: 
+        linear-gradient(135deg, rgba(240, 255, 240, 0.9) 0%, rgba(230, 255, 230, 0.8) 100%);
+    border-color: #228B22;
+}
+
+.resultado-mensaje-militar.incorrecto {
+    background: 
+        linear-gradient(135deg, rgba(255, 240, 240, 0.9) 0%, rgba(255, 230, 230, 0.8) 100%);
+    border-color: #DC143C;
+}
+
+.resultado-icono-militar {
+    font-size: 1.8rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.resultado-texto-militar {
+    flex: 1;
+}
+
+.resultado-texto-militar h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-mensaje-militar.correcto h3 {
+    color: #228B22;
+}
+
+.resultado-mensaje-militar.incorrecto h3 {
+    color: #DC143C;
+}
+
+.resultado-texto-militar div {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #8B4513;
+}
+
+/* Botón siguiente militar */
+.siguiente-militar {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.boton-siguiente-militar {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+.flecha-militar {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.boton-siguiente-militar:hover .flecha-militar {
+    transform: translateX(3px);
+}
+
+/* Hint militar */
+.hint-militar {
+    text-align: center;
+    flex-shrink: 0;
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.8) 0%, rgba(240, 230, 140, 0.7) 100%);
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    box-shadow: 
+        0 3px 6px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.hint-texto-militar {
+    color: #8B4513;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+/* === PANTALLA FINAL === */
+
+.final-card {
+    gap: 12px;
+}
+
+/* Trofeo militar */
+.trofeo-militar {
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+}
+
+.trofeo-base {
+    font-size: 3.5rem;
+    animation: victoria-militar 2.5s infinite;
+    filter: drop-shadow(4px 4px 8px rgba(139, 69, 19, 0.4));
+}
+
+.laureles {
+    font-size: 1.5rem;
+    margin-top: -10px;
+    opacity: 0.8;
+    animation: laureles-flotantes 3s infinite alternate;
+}
+
+@keyframes victoria-militar {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0) rotate(0deg);
+    }
+    40%, 43% {
+        transform: translate3d(0, -20px, 0) rotate(5deg);
+    }
+    70% {
+        transform: translate3d(0, -10px, 0) rotate(-3deg);
+    }
+    90% {
+        transform: translate3d(0, -5px, 0) rotate(2deg);
+    }
+}
+
+@keyframes laureles-flotantes {
+    from { 
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    to { 
+        transform: translateY(-5px) scale(1.05);
+        opacity: 1;
+    }
+}
+
+/* Títulos de victoria */
+.titulo-victoria {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #8B4513;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 
+        2px 2px 4px rgba(139, 69, 19, 0.4),
+        0 0 10px rgba(218, 165, 32, 0.3);
+    letter-spacing: 1px;
+}
+
+.rango-militar {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.rango-militar.general-supremo { color: #DAA520; }
+.rango-militar.coronel { color: #228B22; }
+.rango-militar.capitan { color: #4169E1; }
+.rango-militar.soldado { color: #8A2BE2; }
+
+/* Medallas militares */
+.medallas-militares {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.medalla {
+    font-size: 1.8rem;
+    margin: 0 4px;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.medalla.activa {
+    opacity: 1;
+    filter: grayscale(0%) drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
+    animation: medalla-brillante 2s ease-in-out infinite alternate;
+}
+
+@keyframes medalla-brillante {
+    from { 
+        transform: scale(1);
+        filter: grayscale(0%) drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
+    }
+    to { 
+        transform: scale(1.1);
+        filter: grayscale(0%) drop-shadow(3px 3px 6px rgba(139, 69, 19, 0.4)) brightness(1.1);
+    }
+}
+
+/* Estadísticas de batalla */
+.estadisticas-batalla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.estadistica-militar {
+    background: 
+        linear-gradient(135deg, rgba(240, 255, 240, 0.9) 0%, rgba(230, 255, 230, 0.8) 100%);
+    padding: 18px;
+    border-radius: 15px;
+    border: 3px solid #228B22;
+    box-shadow: 
+        0 6px 12px rgba(34, 139, 34, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.estadistica-militar::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.estadistica-numero-militar {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #228B22;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(34, 139, 34, 0.3);
+}
+
+.estadistica-texto-militar {
+    color: #228B22;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(34, 139, 34, 0.2);
+}
+
+/* Mensaje de rendimiento militar */
+.mensaje-rendimiento-militar {
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 220, 0.9) 0%, rgba(240, 230, 140, 0.8) 100%);
+    padding: 18px;
+    border-radius: 15px;
+    border: 3px solid rgba(218, 165, 32, 0.5);
+    flex-shrink: 0;
+    box-shadow: 
+        0 6px 12px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.mensaje-rendimiento-militar::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.mensaje-rendimiento-militar p {
+    font-size: 1.05rem;
+    color: #8B4513;
+    line-height: 1.5;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+/* Reflexión patriótica */
+.reflexion-patriotica {
+    background: 
+        linear-gradient(135deg, rgba(255, 228, 225, 0.9) 0%, rgba(255, 192, 203, 0.8) 100%);
+    padding: 18px;
+    border-radius: 15px;
+    border: 3px solid #DC143C;
+    flex-shrink: 0;
+    box-shadow: 
+        0 6px 12px rgba(220, 20, 60, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.reflexion-patriotica::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.reflexion-icono-patriotico {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 4px rgba(220, 20, 60, 0.3));
+}
+
+.reflexion-patriotica h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: #8B0000;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(139, 0, 0, 0.2);
+}
+
+.reflexion-patriotica p {
+    color: #8B0000;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Contador militar */
+.contador-militar {
+    background: 
+        linear-gradient(135deg, rgba(230, 243, 255, 0.9) 0%, rgba(204, 231, 255, 0.8) 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 3px solid #4169E1;
+    flex-shrink: 0;
+    box-shadow: 
+        0 6px 12px rgba(65, 105, 225, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.contador-militar::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.contador-militar p {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #1E3A8A;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(30, 58, 138, 0.2);
+}
+
+.contador-militar #contador {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #DC143C;
+    text-shadow: 1px 1px 2px rgba(220, 20, 60, 0.3);
+}
+
+/* Barra de tiempo militar */
+.barra-tiempo-militar {
+    width: 100%;
+    height: 8px;
+    background: rgba(65, 105, 225, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 1px 2px rgba(0, 0, 0, 0.2),
+        0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(65, 105, 225, 0.2);
+}
+
+.barra-tiempo-fill-militar {
+    height: 100%;
+    background: 
+        linear-gradient(90deg, #4169E1 0%, #1E90FF 50%, #00BFFF 100%);
+    border-radius: 3px;
+    transition: width 1s linear;
+    box-shadow: 
+        0 1px 2px rgba(65, 105, 225, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.barra-tiempo-fill-militar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.1) 2px,
+            rgba(255, 255, 255, 0.1) 4px
+        );
+}
+
+/* Botones finales militares */
+.botones-militares {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.boton-reiniciar-militar {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* Cita final */
+.cita-final {
+    background: 
+        linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(220, 20, 60, 0.1) 100%);
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgba(139, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.cita-final p {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: #8B0000;
+    font-size: 0.9rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(139, 0, 0, 0.2);
+}
+
+/* === RESPONSIVE === */
+
+@media (max-height: 700px) {
+    .welcome-card, .juego-card, .final-card {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .titulo-principal, .titulo-victoria {
+        font-size: 2.2rem;
+    }
+    
+    .pregunta-texto-militar {
+        font-size: 1.3rem;
+    }
+    
+    .caracteristicas-militares {
+        gap: 10px;
+    }
+    
+    .caracteristica-militar {
+        padding: 12px;
+    }
+    
+    .icono-militar {
+        font-size: 1.6rem;
+        margin-bottom: 6px;
+    }
+    
+    .caracteristica-militar h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .caracteristica-militar p {
+        font-size: 0.85rem;
+    }
+    
+    .instrucciones-militares {
+        padding: 12px;
+    }
+    
+    .instrucciones-militares li {
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+    }
+    
+    .opcion-imagen {
+        height: 100px;
+    }
+    
+    .opcion-titulo {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .trofeo-base {
+        font-size: 3rem;
+    }
+    
+    .titulo-victoria {
+        font-size: 2rem;
+    }
+    
+    .reflexion-patriotica p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .welcome-card, .juego-card, .final-card {
+        height: calc(100vh - 10px);
+        padding: 15px;
+    }
+    
+    .caracteristicas-militares {
+        grid-template-columns: 1fr;
+    }
+    
+    .opciones-militares {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .estadisticas-batalla {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .progreso-info {
+        font-size: 0.85rem;
+    }
+    
+    .resultado-mensaje-militar {
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .resultado-icono-militar {
+        font-size: 1.6rem;
+    }
+    
+    .resultado-texto-militar h3 {
+        font-size: 1.1rem;
+    }
+    
+    .resultado-texto-militar div {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-principal, .titulo-victoria {
+        font-size: 2rem;
+    }
+    
+    .pregunta-texto-militar {
+        font-size: 1.2rem;
+    }
+    
+    .opcion-imagen {
+        height: 90px;
+    }
+    
+    .opcion-titulo {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    
+    .boton-militar, .boton-siguiente-militar, .boton-reiniciar-militar {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+    
+    .escudo-exterior {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .escudo-interior {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .escudo-fecha {
+        font-size: 10px;
+    }
+    
+    .escudo-espadas {
+        font-size: 8px;
+    }
+}
+
+@media (max-height: 600px) {
+    .welcome-card, .juego-card, .final-card {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .titulo-principal, .titulo-victoria {
+        font-size: 1.8rem;
+    }
+    
+    .pregunta-texto-militar {
+        font-size: 1.1rem;
+    }
+    
+    .caracteristica-militar {
+        padding: 10px;
+    }
+    
+    .icono-militar {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+    
+    .caracteristica-militar h3 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    
+    .caracteristica-militar p {
+        font-size: 0.8rem;
+    }
+    
+    .instrucciones-militares {
+        padding: 10px;
+    }
+    
+    .instrucciones-militares h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .instrucciones-militares li {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+    
+    .opcion-imagen {
+        height: 80px;
+    }
+    
+    .opcion-titulo {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .resultado-mensaje-militar {
+        padding: 12px;
+    }
+    
+    .reflexion-patriotica {
+        padding: 12px;
+    }
+    
+    .reflexion-patriotica p {
+        font-size: 0.85rem;
+    }
+    
+    .contador-militar {
+        padding: 12px;
+    }
+    
+    .contador-militar p {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .welcome-card, .juego-card, .final-card {
+        padding: 8px;
+        gap: 6px;
+    }
+    
+    .titulo-principal, .titulo-victoria {
+        font-size: 1.6rem;
+    }
+    
+    .pregunta-texto-militar {
+        font-size: 1rem;
+    }
+    
+    .caracteristicas-militares {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .caracteristica-militar {
+        padding: 8px;
+    }
+    
+    .icono-militar {
+        font-size: 1.2rem;
+        margin-bottom: 3px;
+    }
+    
+    .caracteristica-militar h3 {
+        font-size: 0.8rem;
+        margin-bottom: 3px;
+    }
+    
+    .caracteristica-militar p {
+        font-size: 0.75rem;
+    }
+    
+    .instrucciones-militares {
+        padding: 8px;
+    }
+    
+    .instrucciones-militares h3 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .instrucciones-militares li {
+        font-size: 0.8rem;
+        margin-bottom: 3px;
+    }
+    
+    .opciones-militares {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .opcion-imagen {
+        height: 60px;
+    }
+    
+    .opcion-titulo {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    
+    .resultado-mensaje-militar {
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .reflexion-patriotica {
+        padding: 10px;
+    }
+    
+    .reflexion-patriotica h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .reflexion-patriotica p {
+        font-size: 0.8rem;
+    }
+    
+    .contador-militar {
+        padding: 10px;
+    }
+    
+    .estadisticas-batalla {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .estadistica-militar {
+        padding: 10px;
+    }
+    
+    .estadistica-numero-militar {
+        font-size: 1.6rem;
+    }
+    
+    .estadistica-texto-militar {
+        font-size: 0.85rem;
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .barra-tiempo-fill-militar {
+        transition-duration: 0.1s !important;
+    }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+    .welcome-card, .juego-card, .final-card {
+        background: #FFFFFF;
+        border-color: #000000;
+    }
+    
+    .titulo-principal, .pregunta-texto-militar, .titulo-victoria {
+        color: #000000;
+    }
+    
+    .pergamino-fondo {
+        background: #FFFFFF;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    body {
+        background: white !important;
+        overflow: visible !important;
+    }
+    
+    .pergamino-fondo {
+        background: white !important;
+    }
+    
+    .welcome-card, .juego-card, .final-card {
+        box-shadow: none !important;
+        border: 2px solid #000000 !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .contador-militar {
+        display: none !important;
+    }
+}

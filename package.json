@@ -1,0 +1,22 @@
+{
+  "name": "batalla-5-mayo-trivia",
+  "version": "1.0.0",
+  "description": "Trivia game about the Battle of 5 de Mayo",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "trivia",
+    "history",
+    "5 de Mayo",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

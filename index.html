@@ -67,7 +67,7 @@
                 </div>
 
                 <!-- Botón de inicio con estilo militar -->
-                <button class="boton-militar" onclick="comenzarJuego()">
+                <button class="boton-militar" onclick="comenzarJuego()" id="boton-iniciar">
                     <span class="boton-icono-militar">⚔️</span>
                     <span class="boton-texto">Iniciar Batalla</span>
                     <span class="boton-icono-militar">⚔️</span>
@@ -83,20 +83,70 @@
 
     <script>
         function comenzarJuego() {
+            console.log('Iniciando juego...'); // Debug log
+            
+            // Limpiar cualquier progreso anterior
+            localStorage.removeItem('preguntaActual');
+            localStorage.removeItem('totalIntentos');
+            
             // Efecto de transición militar
             const card = document.querySelector('.welcome-card');
+            const boton = document.getElementById('boton-iniciar');
+            
+            // Deshabilitar botón para evitar múltiples clics
+            boton.disabled = true;
+            boton.style.opacity = '0.7';
+            
             card.style.transform = 'scale(0.95)';
             card.style.opacity = '0.8';
             
             setTimeout(() => {
-                window.location.href = 'juego.html';
+                try {
+                    window.location.href = './juego.html';
+                } catch (error) {
+                    console.error('Error al navegar:', error);
+                    // Fallback: recargar la página con el hash
+                    window.location.hash = '#juego';
+                    window.location.reload();
+                }
             }, 300);
+        }
+
+        // Verificar si existe juego.html
+        function verificarArchivos() {
+            fetch('./juego.html')
+                .then(response => {
+                    if (!response.ok) {
+                        console.warn('juego.html no encontrado');
+                        // Crear un enlace alternativo si el archivo no existe
+                        const boton = document.getElementById('boton-iniciar');
+                        boton.onclick = () => {
+                            alert('El archivo juego.html no se encuentra. Verifica que esté en la misma carpeta.');
+                        };
+                    }
+                })
+                .catch(error => {
+                    console.warn('No se pudo verificar juego.html:', error);
+                });
         }
 
         // Efecto de entrada con animación militar
         window.addEventListener('load', () => {
             const card = document.querySelector('.welcome-card');
             card.style.animation = 'marcha-militar 1.2s ease-out';
+            
+            // Verificar archivos después de cargar
+            setTimeout(verificarArchivos, 1000);
+        });
+
+        // Prevenir doble clic
+        let navegando = false;
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.boton-militar') && navegando) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
         });
     </script>
 </body>

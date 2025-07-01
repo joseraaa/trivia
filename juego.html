@@ -26,7 +26,7 @@
 
                 <!-- Pregunta con marco histórico -->
                 <div class="pregunta-historica">
-                    <h2 id="pregunta-texto" class="pregunta-texto-militar"></h2>
+                    <h2 id="pregunta-texto" class="pregunta-texto-militar">Cargando pregunta...</h2>
                 </div>
 
                 <!-- Opciones de respuesta simplificadas -->
@@ -57,10 +57,42 @@
                 <div id="hint-container" class="hint-militar" style="display: none;">
                     <div class="hint-texto-militar">💡 Reagrupa tus fuerzas e intenta nuevamente</div>
                 </div>
+
+                <!-- Botón de regreso (para debug) -->
+                <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+                    <button onclick="window.location.href='./index.html'" style="background: rgba(139, 69, 19, 0.8); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+                        ← Volver al Inicio
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Verificar que el script se está cargando
+        console.log('juego.html cargado correctamente');
+        
+        // Verificar si script.js existe y cargarlo
+        function cargarScript() {
+            const script = document.createElement('script');
+            script.src = './script.js';
+            script.onload = () => {
+                console.log('script.js cargado correctamente');
+            };
+            script.onerror = () => {
+                console.error('Error al cargar script.js');
+                // Mostrar mensaje de error al usuario
+                document.getElementById('pregunta-texto').textContent = 'Error: No se pudo cargar el juego. Verifica que script.js esté presente.';
+            };
+            document.head.appendChild(script);
+        }
+
+        // Cargar el script cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', cargarScript);
+        } else {
+            cargarScript();
+        }
+    </script>
 </body>
 </html>

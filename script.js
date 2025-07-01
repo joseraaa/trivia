@@ -7,17 +7,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "1861",
-                imagen: "img/1861.jpg"
+                imagen: "https://images.pexels.com/photos/4792509/pexels-photo-4792509.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "1862",
-                imagen: "img/1862.jpg"
+                imagen: "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "1863",
-                imagen: "img/1863.jpg"
+                imagen: "https://images.pexels.com/photos/4792729/pexels-photo-4792729.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "b",
@@ -30,17 +30,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "General Ignacio Zaragoza",
-                imagen: "img/zaragoza.jpg"
+                imagen: "https://images.pexels.com/photos/8828786/pexels-photo-8828786.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "General Porfirio Díaz",
-                imagen: "img/diaz.jpg"
+                imagen: "https://images.pexels.com/photos/8828787/pexels-photo-8828787.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "General Miguel Negrete",
-                imagen: "img/negrete.jpg"
+                imagen: "https://images.pexels.com/photos/8828788/pexels-photo-8828788.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "a",
@@ -53,17 +53,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "España",
-                imagen: "img/espana.jpg"
+                imagen: "https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "Francia",
-                imagen: "img/francia.jpg"
+                imagen: "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "Inglaterra",
-                imagen: "img/inglaterra.jpg"
+                imagen: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "b",
@@ -76,17 +76,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "Fuerte de Loreto y Guadalupe",
-                imagen: "img/loreto.jpg"
+                imagen: "https://images.pexels.com/photos/8828789/pexels-photo-8828789.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "Fuerte de San Juan y Santa María",
-                imagen: "img/sanjuan.jpg"
+                imagen: "https://images.pexels.com/photos/8828790/pexels-photo-8828790.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "Fuerte de la Cruz y San Miguel",
-                imagen: "img/guadalupe.jpg"
+                imagen: "https://images.pexels.com/photos/8828791/pexels-photo-8828791.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "a",
@@ -99,17 +99,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "General Élie Frédéric Forey",
-                imagen: "img/forey.jpg"
+                imagen: "https://images.pexels.com/photos/8828792/pexels-photo-8828792.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "General Charles de Lorencez",
-                imagen: "img/lorencez.jpg"
+                imagen: "https://images.pexels.com/photos/8828793/pexels-photo-8828793.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "General François Achille Bazaine",
-                imagen: "img/bazaine.jpg"
+                imagen: "https://images.pexels.com/photos/8828794/pexels-photo-8828794.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "b",
@@ -122,17 +122,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "Suspensión del pago de deudas",
-                imagen: "img/deudas.jpg"
+                imagen: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "Establecer un imperio católico",
-                imagen: "img/imperio.jpg"
+                imagen: "https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "Control de rutas comerciales",
-                imagen: "img/comercio.jpg"
+                imagen: "https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "a",
@@ -145,17 +145,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "Benito Juárez",
-                imagen: "img/juarez.jpg"
+                imagen: "https://images.pexels.com/photos/8828795/pexels-photo-8828795.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "Sebastián Lerdo de Tejada",
-                imagen: "img/lerdo.jpg"
+                imagen: "https://images.pexels.com/photos/8828796/pexels-photo-8828796.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "Miguel Miramón",
-                imagen: "img/miramon.jpg"
+                imagen: "https://images.pexels.com/photos/8828797/pexels-photo-8828797.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "a",
@@ -168,17 +168,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "4,000 soldados",
-                imagen: "img/4000.jpg"
+                imagen: "https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "6,000 soldados",
-                imagen: "img/6000.jpg"
+                imagen: "https://images.pexels.com/photos/1181535/pexels-photo-1181535.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "8,000 soldados",
-                imagen: "img/8000.jpg"
+                imagen: "https://images.pexels.com/photos/1181536/pexels-photo-1181536.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "b",
@@ -191,17 +191,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "Inspiró movimientos republicanos en Europa",
-                imagen: "img/europa.jpg"
+                imagen: "https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "Demostró que Francia no era invencible",
-                imagen: "img/invencible.jpg"
+                imagen: "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "Fortaleció la posición de Estados Unidos",
-                imagen: "img/eeuu.jpg"
+                imagen: "https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "b",
@@ -214,17 +214,17 @@ const preguntas = [
             {
                 id: "a",
                 texto: "Independencia política total",
-                imagen: "img/independencia.jpg"
+                imagen: "https://images.pexels.com/photos/1181537/pexels-photo-1181537.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "b",
                 texto: "Defensa de la soberanía nacional",
-                imagen: "img/soberania.jpg"
+                imagen: "https://images.pexels.com/photos/1181538/pexels-photo-1181538.jpeg?auto=compress&cs=tinysrgb&w=400"
             },
             {
                 id: "c",
                 texto: "Fin definitivo de conflictos",
-                imagen: "img/conflictos.jpg"
+                imagen: "https://images.pexels.com/photos/1181539/pexels-photo-1181539.jpeg?auto=compress&cs=tinysrgb&w=400"
             }
         ],
         respuestaCorrecta: "b",
@@ -240,6 +240,8 @@ let respuestaSeleccionada = false;
 
 // Inicializar el juego
 function inicializarJuego() {
+    console.log('Inicializando juego...');
+    
     // Recuperar progreso guardado
     const progresoGuardado = localStorage.getItem('preguntaActual');
     const intentosGuardados = localStorage.getItem('totalIntentos');
@@ -254,7 +256,7 @@ function inicializarJuego() {
     
     // Si ya completó todas las preguntas, ir a final
     if (preguntaActual >= preguntas.length) {
-        window.location.href = 'final.html';
+        window.location.href = './final.html';
         return;
     }
     
@@ -263,6 +265,8 @@ function inicializarJuego() {
 
 // Mostrar la pregunta actual
 function mostrarPregunta() {
+    console.log(`Mostrando pregunta ${preguntaActual + 1}`);
+    
     const pregunta = preguntas[preguntaActual];
     
     // Actualizar elementos de la interfaz
@@ -284,7 +288,7 @@ function mostrarPregunta() {
         opcionElement.onclick = () => seleccionarRespuesta(opcion.id);
         
         opcionElement.innerHTML = `
-            <img src="${opcion.imagen}" alt="${opcion.texto}" class="opcion-imagen" loading="lazy">
+            <img src="${opcion.imagen}" alt="${opcion.texto}" class="opcion-imagen" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pjwvc3ZnPg=='">
             <div class="opcion-titulo">${opcion.texto}</div>
         `;
         
@@ -302,6 +306,8 @@ function mostrarPregunta() {
 // Seleccionar respuesta
 function seleccionarRespuesta(opcionId) {
     if (respuestaSeleccionada) return;
+    
+    console.log(`Respuesta seleccionada: ${opcionId}`);
     
     const pregunta = preguntas[preguntaActual];
     const esCorrecta = opcionId === pregunta.respuestaCorrecta;
@@ -423,7 +429,7 @@ function siguientePregunta() {
     
     if (preguntaActual >= preguntas.length) {
         // Juego completado
-        window.location.href = 'final.html';
+        window.location.href = './final.html';
     } else {
         // Mostrar siguiente pregunta
         mostrarPregunta();
@@ -459,11 +465,15 @@ let lastTouchEnd = 0;
 
 // Inicializar cuando se carga la página
 window.addEventListener('load', () => {
+    console.log('Página cargada, inicializando juego...');
     inicializarJuego();
     agregarEventosTactiles();
     
     // Animación de entrada militar
-    document.querySelector('.juego-card').style.animation = 'marcha-militar 1.2s ease-out';
+    const juegoCard = document.querySelector('.juego-card');
+    if (juegoCard) {
+        juegoCard.style.animation = 'marcha-militar 1.2s ease-out';
+    }
 });
 
 // Precargar imágenes para mejor rendimiento
@@ -478,3 +488,6 @@ function precargarImagenes() {
 
 // Precargar imágenes al inicializar
 window.addEventListener('DOMContentLoaded', precargarImagenes);
+
+// Verificar que el script se cargó correctamente
+console.log('Script.js cargado correctamente. Total de preguntas:', preguntas.length);

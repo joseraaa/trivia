@@ -274,7 +274,7 @@ function mostrarPregunta() {
     const progreso = ((preguntaActual + 1) / preguntas.length) * 100;
     document.getElementById('progreso-fill').style.width = `${progreso}%`;
     
-    // Generar opciones simplificadas
+    // Generar opciones
     const opcionesContainer = document.getElementById('opciones-container');
     opcionesContainer.innerHTML = '';
     
